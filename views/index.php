@@ -17,7 +17,7 @@
 			<tr>
 				<th></th>
 				<td>
-					<button type="submit" class="button-primary">Posting</button>
+					<button type="submit" class="button-primary" id="push">Posting</button>
 				</td>
 			</tr>
 		</table>
@@ -25,3 +25,13 @@
 	<hr>
 	<p><strong>Random Quote </strong> <?php echo getQuote() ?></p>
 </div>
+
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$("#push").click(function(e){
+			e.preventDefault();
+
+			alert("Clicked");
+		});
+	});
+</script>
