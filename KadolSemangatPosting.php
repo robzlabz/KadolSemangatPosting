@@ -4,7 +4,7 @@ Plugin Name: Kadol Semangat Posting | Go 1M2015
 Plugin URI: 
 Description: Kadol Semangat Posting. Sebuah Persembahan dari KADOL untuk KADOL | Sukses 1M2015
 Author: Anggota KADOL
-Version: 1.0
+Version: 1.0.1
 Author URI: https://www.facebook.com/groups/kadol/
 
 */
@@ -47,6 +47,16 @@ function kadol_addmenu() {
 
 function kadol_index() {	
 	loadView('index');
+}
+
+/*
+	Menangkap Fungsi Ajax
+	Menambahkan Aksi Penangkapan Fungsi Ajax 
+	add_action( wp_ajax_<nama_action>, nama_fungsi );
+*/
+add_action('wp_ajax_posting', 'Posting');
+function Posting(){
+	die(var_dump($_POST));
 }
 
  ?>

@@ -1,6 +1,7 @@
 <div class="wrap">
 	<h2>KADOLers Semangat Posting</h2>
-	<form action="" method="POST">
+	<form action="" method="POST" id="form">
+		<input type="hidden" name="action" value="posting">
 		<table class="form-table" id="table">
 			<tr>
 				<th><label>Nama Posting : </label></th>
@@ -24,6 +25,7 @@
 	</form>
 	<hr>
 	<p><strong>Random Quote </strong> <?php echo getQuote() ?></p>
+	<div id="result"></div>
 </div>
 
 <script type="text/javascript">
@@ -31,7 +33,11 @@
 		$("#push").click(function(e){
 			e.preventDefault();
 
-			alert("Clicked");
+			var data = $('#form').serialize();
+
+			$.post(ajaxurl, data, function(result){
+				$("#result").html(result).fadeIn(1000).fadeOut(5000);
+			})
 		});
 	});
 </script>
