@@ -127,22 +127,22 @@ function somatic_attach_external_image( $url = null, $post_id = null, $thumb = n
 	add_action( wp_ajax_<nama_action>, nama_fungsi );
 */
 add_action('wp_ajax_posting', 'Posting');
-function Posting(){
-	//-- Set up post values
+function Posting(){    
+	// Persiapan awal membuat isi dari postingan baru
 	$myPost = array(
 		'post_status' => 'publish',
-		'post_type' => 'post',
-		'post_author' => $authorID,
+		'post_type' => 'post',		
 		'post_title' => $_POST['title'],
 		'comment_status' => 'closed',
 		'ping_status' => 'closed',
-		'post_category' => array($category),
+		'post_category' => array($_POST['cat']),
+        'tags_input' => $_POST['tags']
 	);
 
-	//-- Create the new post
+	// Membuat Post baru berdasarkan variabel $myPost yang telah di buat
 	$newPostID = wp_insert_post($myPost);
 
-	//-- Create Attachment
+	// Membuat attachment
 	$att = array('post_title' => $_POST['title']);
 	$setatt = somatic_attach_external_image($_POST['imageurl'], $newPostID, null, $_POST['title'], $att);
 
@@ -160,9 +160,9 @@ function Posting(){
 	$updatePostID = wp_update_post( $updatePost );
 
 	if($setatt and $updatePostID){
-		echo '<h2>SUKSES POST<h2>';
+		echo '<div class="updated"><p><strong>Berhasil</strong> Postingan berjudul '.$_POST['title'].' berhasil dibuat</p></div>';
 	}else{
-		echo '<h2>GAGAL POST<h2>';
+		echo '<div class="error"><p><strong>ERROR</strong> Terdapat kesalahan pada post yang dibuat</p></div>';
 	}
 
 	die();

@@ -10,9 +10,22 @@
 				</td>
 			</tr>
 			<tr>
+				<th><label>Category : </label></th>
+				<td>
+					<?php wp_dropdown_categories(array('hide_empty' => 0)) ?>
+				</td>
+			</tr>
+			<tr>
+				<th><label>Tags : </label></th>
+				<td>
+					<input type="text" name="tags" style="width:70%" placeholder="Daftar Tags">
+					<p class="description">Pisahkan dengan koma (,) ; contoh : (Mobil, Rubicon, Pajero Sport)</p>
+				</td>
+			</tr>
+			<tr>
 				<th><label>URL Gambar : </label></th>
 				<td>
-					<input type="text" name="imageurl" style="width:100%" placeholder="URL Gambar (ex : http://contoh.com/gambar.jpg)">
+					<input type="text" name="imageurl" style="width:100%" placeholder="URL Gambar (Contoh : http://contoh.com/gambar.jpg)">
 				</td>
 			</tr>
 			<tr>
