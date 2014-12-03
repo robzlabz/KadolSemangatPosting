@@ -46,6 +46,8 @@
 		$("#push").click(function(e){
 			e.preventDefault();
 
+			$('#result').fadeIn(1000).html('<p class="description"><img src="../wp-admin/images/wpspin_light.gif"> Gambar sedang di unduh, cepat atau lambat tergantung kecepatan server.</p>');
+
 			var data = $('#form').serialize();
 
 			$.post(ajaxurl, data, function(result){
