@@ -22,7 +22,7 @@ Konsep ini sama dengan Plugin yang dulu di buat [Kadol Posting Anti Galau](https
 ![Tampilan Aktif Plugin](http://i.imgur.com/EUUBzcU.png)
 
 ### Tampilan Menu
-![Tampilan Menu KADOL Semangat Posting](http://i.imgur.com/cYbiB2Q.png)
+![Tampilan Menu KADOL Semangat Posting](http://i.imgur.com/1Jj1mw1.png)
 
 
 
