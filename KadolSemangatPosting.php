@@ -136,7 +136,9 @@ function Posting(){
 		'comment_status' => 'closed',
 		'ping_status' => 'closed',
 		'post_category' => array($_POST['cat']),
-        'tags_input' => $_POST['tags']
+        	'tags_input' => $_POST['tags'],
+        	'post_date'      => $_POST['tanggal'], 
+        	'post_date_gmt'  => $_POST['tanggal']
 	);
 
 	// Membuat Post baru berdasarkan variabel $myPost yang telah di buat
