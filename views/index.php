@@ -10,6 +10,12 @@
 				</td>
 			</tr>
 			<tr>
+				<th><label>Tanggal/Waktu : </label></th>
+				<td>
+					<input type="text" name="tanggal" style="width:50%" value="<?php echo current_time( 'mysql' ); ?>">
+				</td>
+			</tr>
+			<tr>
 				<th><label>Category : </label></th>
 				<td>
 					<?php wp_dropdown_categories(array('hide_empty' => 0)) ?>
